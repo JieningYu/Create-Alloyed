@@ -17,7 +17,6 @@ import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 @Mod.EventBusSubscriber(modid = Alloyed.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataEventsHandler {
     // Datagen
-    @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void gatherData(GatherDataEvent event) {
         Alloyed.LOGGER.debug("Gathering data for Alloyed ...");
         DataGenerator generator = event.getGenerator();
@@ -35,7 +34,5 @@ public class DataEventsHandler {
         // Register advancements
         ModAdvancements.register();
         ModAdvancementProvider.register(generator);
-
-        Alloyed.LOGGER.debug("Finished gathering data for Alloyed");
     }
 }
